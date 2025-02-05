@@ -155,7 +155,8 @@ namespace Assignment
 
         #endregion
 
-        #region Q09 - 
+        #region Q09 - Given two arrays, find their intersection. Each element in the result should appear as many times as it shows in both arrays.
+
 
         static int[] Intersection(int[] arr01, int[] arr02)
         {
@@ -180,6 +181,39 @@ namespace Assignment
             }
 
             return result.ToArray();
+        }
+
+        #endregion
+
+        #region Q10 - Given an ArrayList of integers and a target sum, find if there is a contiguous sub list that sums up to the target.
+
+        static void PrintSublist(int[] arr, int start, int end)
+        {
+            Console.Write("[");
+            for (int i = start; i <= end; i++)
+            {
+                Console.Write(arr[i]);
+                if (i < end) Console.Write(", ");
+            }
+            Console.WriteLine("]");
+        }
+
+        static void FindSublist(int[] arr, int target)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int sum = 0;
+                for (int j = i; j < arr.Length; j++)
+                {
+                    sum += arr[j];
+                    if (sum == target)
+                    {
+                        PrintSublist(arr, i, j);
+                        return;
+                    }
+                }
+            }
+            Console.WriteLine("No sublist found");
         }
 
         #endregion
@@ -307,6 +341,14 @@ namespace Assignment
             //int[] arr02 = { 1, 4, 4 ,3};
             //int[] result = Intersection(arr01, arr02);
             //Console.WriteLine(string.Join(", ", result));
+
+            #endregion
+
+            #region Q10 - Given an ArrayList of integers and a target sum, find if there is a contiguous sub list that sums up to the target.
+
+            int[] arr = { 1, 2, 3, 7, 5 };
+            int target = 12;
+            FindSublist(arr, target);
 
             #endregion
 
