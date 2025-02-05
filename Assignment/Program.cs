@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 namespace Assignment
 {
     internal class Program
@@ -123,6 +124,36 @@ namespace Assignment
 
         #endregion
 
+        #region Q08 - Create a function that pushes a series of integers onto a stack. Then, search for a target integer in the stack.If the target is found, 
+
+        static void SearchInStack(Stack<int> stack, int target)
+        {
+            int count = 0;
+            bool found = false;
+            Stack<int> tempStack = new Stack<int>(stack);
+
+            while (tempStack.Count > 0)
+            {
+                count++;
+                if (tempStack.Pop() == target)
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found)
+            {
+                Console.WriteLine($"Target found successfully and the count is {count}");
+            }
+            else
+            {
+                Console.WriteLine("Target not found");
+            }
+        }
+
+        #endregion
+
         static void Main(string[] args)
         {
 
@@ -222,6 +253,21 @@ namespace Assignment
             //{
             //    Console.WriteLine(queue.Dequeue());
             //}
+
+            #endregion
+
+            #region Q08 - Create a function that pushes a series of integers onto a stack. Then, search for a target integer in the stack.If the target is found,
+
+            //Stack<int> stack = new Stack<int>();
+            //stack.Push(10);
+            //stack.Push(20);
+            //stack.Push(30);
+            //stack.Push(40);
+
+            //Console.Write("Enter target: ");
+            //int target = int.Parse(Console.ReadLine()!);
+
+            //SearchInStack(stack, target);
 
             #endregion
 
