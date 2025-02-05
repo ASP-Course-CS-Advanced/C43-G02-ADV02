@@ -1,4 +1,5 @@
-﻿namespace Assignment
+﻿using System.Collections;
+namespace Assignment
 {
     internal class Program
     {
@@ -207,6 +208,20 @@
             //int[] arr = { 1, 2, 3, 4, 5, 6 };
             //int[] result = RemoveOddNumbers(arr);
             //Console.WriteLine(string.Join(", ", result));
+
+            #endregion
+
+            #region Q07 - Implement a queue that can hold different data types.
+
+            //Queue queue = new Queue();
+            //queue.Enqueue(1);
+            //queue.Enqueue("Apple");
+            //queue.Enqueue(5.28);
+
+            //while (queue.Count > 0)
+            //{
+            //    Console.WriteLine(queue.Dequeue());
+            //}
 
             #endregion
 
