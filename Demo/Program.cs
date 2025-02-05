@@ -7,13 +7,23 @@ namespace Demo
 
         #region Part 03 NonGeneric Collections Cons
 
-        public static int SumArray(ArrayList numbers)
+        public static int SumArrayList(ArrayList numbers)
         {
             int sum = 0;
             if (numbers?.Count > 0)
             {
                 for (int i = 0; i < numbers.Count; i++)
                     sum += (int?)numbers[i] ?? 0;// Unsafe Casting [ May throw exception if the value of numbers[i] is of type not int ]
+            }
+            return sum;
+        } 
+        public static int SumList(List<int> numbers)
+        {
+            int sum = 0;
+            if (numbers?.Count > 0)
+            {
+                for (int i = 0; i < numbers.Count; i++)
+                    sum += numbers[i];// No Unboxing - "Sum" is of type "int" and "numbers[i]" is of type "int"
             }
             return sum;
         }
@@ -104,7 +114,64 @@ namespace Demo
             //numbers.Add(4);// Boxing, Add(object? item) - and you try to add int value - so this int value "4" will boxed into object in heap and return address of it to "item" that represent Fourth element in the array of objects? .
             //numbers.Add("Eslam");// Will Work, Because You Add into Array of objects? - Compiler can't enforce Type Safety - No Boxing , Because You pass object of type string [reference type].
 
-            //Console.WriteLine(SumArray(numbers));// System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Nullable`1[System.Int32]'.
+            //Console.WriteLine(SumArrayList(numbers));// System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Nullable`1[System.Int32]'.
+
+            #endregion
+
+            #region Part 04 Generic Collections - List
+
+            #region Part01
+
+            //List<int> numbers = new List<int>();
+            //Console.WriteLine($"Count = {numbers.Count}, Capacity = {numbers.Capacity}");// Count = 0, Capacity = 0
+
+            //numbers.Add(1);
+            //Console.WriteLine($"Count = {numbers.Count}, Capacity = {numbers.Capacity}");// Count = 1, Capacity = 4
+
+            //numbers.AddRange(new int[] { 2, 3, 4 });
+            //Console.WriteLine($"Count = {numbers.Count}, Capacity = {numbers.Capacity}");// Count = 4, Capacity = 4
+
+            //numbers.Add(5);
+            //Console.WriteLine($"Count = {numbers.Count}, Capacity = {numbers.Capacity}");// Count = 5, Capacity = 8
+
+            //numbers.TrimExcess();
+            //Console.WriteLine($"Count = {numbers.Count}, Capacity = {numbers.Capacity}");// Count = 5, Capacity = 5 
+
+            #endregion
+
+            #region Part02
+
+            //List<int> numbers = new List<int>(6) { 1, 2, 3, 4, 5 };
+            //Console.WriteLine($"Count:{numbers.Count}, Capacity: {numbers.Capacity}");// Count:5, Capacity: 6
+
+            //numbers[0] = 100;
+            ////numbers[5] = 20;//Exception - out of range - indexer can access elements of index (i < count) only.
+
+            //for (int i = 0; i < numbers.Count; i++) // Because List has Indexer [].
+            //    Console.Write(numbers[i]+" ");// 100 2 3 4 5
+
+            //Console.WriteLine();
+
+            //foreach (int num in numbers)// Because List implement IEnumerable Interface.
+            //    Console.Write(num+" ");// 100 2 3 4 5
+
+
+            #endregion
+
+            #region Part03
+
+            //List<int> numbers = new List<int>(5);
+
+            //numbers.Add(1);// No-Boxing, Add(int item) - and you try to add int value - so this no casting from type to another
+            //numbers.Add(2);
+            //numbers.Add(3);
+            //numbers.Add(4);
+            ////numbers.Add("Eslam");// Error, Because Add(int item) take only integer values - Compiler can enforce the type safety.
+
+            //Console.WriteLine(SumList(numbers));// 10
+
+            #endregion
+
 
             #endregion
 
