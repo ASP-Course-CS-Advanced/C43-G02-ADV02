@@ -1,7 +1,25 @@
-﻿namespace Demo
+﻿using System.Collections;
+
+namespace Demo
 {
     internal class Program
     {
+
+        #region Part 03 NonGeneric Collections Cons
+
+        public static int SumArray(ArrayList numbers)
+        {
+            int sum = 0;
+            if (numbers?.Count > 0)
+            {
+                for (int i = 0; i < numbers.Count; i++)
+                    sum += (int?)numbers[i] ?? 0;// Unsafe Casting [ May throw exception if the value of numbers[i] is of type not int ]
+            }
+            return sum;
+        }
+
+        #endregion
+
         static void Main(string[] args)
         {
 
@@ -73,6 +91,20 @@
             //} 
 
             #endregion
+
+            #endregion
+
+            #region Part 03 NonGeneric Collections Cons
+
+            //ArrayList numbers = new ArrayList(5);
+
+            //numbers.Add(1);// Boxing, Add(object? item) - and you try to add int value - so this int value "1" will boxed into object in heap and return address of it to "item" that represent first element in the array of objects? .
+            //numbers.Add(2);// Boxing, Add(object? item) - and you try to add int value - so this int value "2" will boxed into object in heap and return address of it to "item" that represent Second element in the array of objects? .
+            //numbers.Add(3);// Boxing, Add(object? item) - and you try to add int value - so this int value "3" will boxed into object in heap and return address of it to "item" that represent Third element in the array of objects? .
+            //numbers.Add(4);// Boxing, Add(object? item) - and you try to add int value - so this int value "4" will boxed into object in heap and return address of it to "item" that represent Fourth element in the array of objects? .
+            //numbers.Add("Eslam");// Will Work, Because You Add into Array of objects? - Compiler can't enforce Type Safety - No Boxing , Because You pass object of type string [reference type].
+
+            //Console.WriteLine(SumArray(numbers));// System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Nullable`1[System.Int32]'.
 
             #endregion
 
