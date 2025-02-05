@@ -18,11 +18,28 @@
             }
         }
 
+        #endregion
+
+        #region Q02 - Given a number N and an array of N numbers. Determine if it's palindrome or not.
+
+        static bool IsPalindrome(int[] arr)
+        {
+            int left = 0, right = arr.Length - 1;
+            while (left < right)
+            {
+                if (arr[left] != arr[right])
+                    return false;
+                left++;
+                right--;
+            }
+            return true;
+        }
 
         #endregion
 
         static void Main(string[] args)
         {
+
             #region Q01 - Given an array consists of numbers with size N and number of queries
 
             //Console.Write("Enter The Size of array: ");
@@ -51,6 +68,18 @@
             //NumbersGreaterThanX(arr, queries);
 
             #endregion
+
+            #region Q02 - Given a number N and an array of N numbers. Determine if it's palindrome or not.
+
+            //int[] arr = { 1, 3, 2, 3, 1 };
+
+            //if (IsPalindrome(arr))
+            //    Console.WriteLine("Yes!");
+            //else
+            //    Console.WriteLine("No!");
+
+            #endregion
+
         }
     }
 }
