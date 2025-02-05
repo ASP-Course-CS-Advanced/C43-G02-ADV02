@@ -103,11 +103,21 @@
 
         #endregion
 
-        #region Q06 - 
+        #region Q06 - Given an array list , implement a function to remove all odd numbers from it.
 
         static int[] RemoveOddNumbers(int[] arr)
         {
-            return arr.Where(x => x % 2 == 0).ToArray();
+            List<int> result = new List<int>();
+
+            foreach (int num in arr)
+            {
+                if (num % 2 == 0) // Check if the number is even
+                {
+                    result.Add(num);
+                }
+            }
+
+            return result.ToArray();
         }
 
         #endregion
@@ -194,7 +204,9 @@
 
             #region Q06 - Given an array list , implement a function to remove all odd numbers from it.
 
-
+            //int[] arr = { 1, 2, 3, 4, 5, 6 };
+            //int[] result = RemoveOddNumbers(arr);
+            //Console.WriteLine(string.Join(", ", result));
 
             #endregion
 
