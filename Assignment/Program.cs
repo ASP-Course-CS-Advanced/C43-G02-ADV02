@@ -87,7 +87,27 @@
 
         static int[] RemoveDuplicates(int[] arr)
         {
-            return arr.Distinct().ToArray();
+            HashSet<int> uniqueSet = new HashSet<int>();
+            List<int> result = new List<int>();
+
+            foreach (int num in arr)
+            {
+                if (uniqueSet.Add(num)) // Add returns true if the element is not already in the set
+                {
+                    result.Add(num);
+                }
+            }
+
+            return result.ToArray();
+        }
+
+        #endregion
+
+        #region Q06 - 
+
+        static int[] RemoveOddNumbers(int[] arr)
+        {
+            return arr.Where(x => x % 2 == 0).ToArray();
         }
 
         #endregion
@@ -169,6 +189,12 @@
             //int[] arr = { 1, 1, 2, 2, 3, 4, 4, 5, 6, 7, 7 };
             //int[] result = RemoveDuplicates(arr);
             //Console.WriteLine(string.Join(", ", result));
+
+            #endregion
+
+            #region Q06 - Given an array list , implement a function to remove all odd numbers from it.
+
+
 
             #endregion
 
