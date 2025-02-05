@@ -55,6 +55,43 @@
 
         #endregion
 
+        #region Q04 - Given a Stack, implement a function to check if a string of parentheses is balanced using a stack.
+
+        static bool IsBalanced(string str)
+        {
+            Stack<char> stack = new Stack<char>();
+            foreach (char c in str)
+            {
+                if (c == '(' || c == '[' || c == '{')
+                {
+                    stack.Push(c);
+                }
+                else
+                {
+                    if (stack.Count == 0)
+                        return false;
+                    char top = stack.Pop();
+                    if ((c == ')' && top != '(') || (c == ']' && top != '[') || (c == '}' && top != '{'))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return stack.Count == 0;
+        }
+
+
+        #endregion
+
+        #region Q05 - Given an array, implement a function to remove duplicate elements from an array.
+
+        static int[] RemoveDuplicates(int[] arr)
+        {
+            return arr.Distinct().ToArray();
+        }
+
+        #endregion
+
         static void Main(string[] args)
         {
 
@@ -115,6 +152,26 @@
             //}
 
             #endregion
+
+            #region Q04 - Given a Stack, implement a function to check if a string of parentheses is balanced using a stack.
+
+            //string str = "[()]{}";
+
+            //if(IsBalanced(str))
+            //    Console.WriteLine("Balanced!");
+            //else
+            //    Console.WriteLine("Not Balanced!");
+
+            #endregion
+
+            #region Q05 - Given an array, implement a function to remove duplicate elements from an array.
+
+            //int[] arr = { 1, 1, 2, 2, 3, 4, 4, 5, 6, 7, 7 };
+            //int[] result = RemoveDuplicates(arr);
+            //Console.WriteLine(string.Join(", ", result));
+
+            #endregion
+
         }
     }
 }
