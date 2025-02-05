@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace Assignment
 {
     internal class Program
@@ -154,6 +155,35 @@ namespace Assignment
 
         #endregion
 
+        #region Q09 - 
+
+        static int[] Intersection(int[] arr01, int[] arr02)
+        {
+            List<int> result = new List<int>();
+            Dictionary<int, int> frequency = new Dictionary<int, int>();
+
+            foreach (int num in arr01)
+            {
+                if (frequency.ContainsKey(num))
+                    frequency[num]++;
+                else
+                    frequency[num] = 1;
+            }
+
+            foreach (int num in arr02)
+            {
+                if (frequency.ContainsKey(num) && frequency[num] > 0)
+                {
+                    result.Add(num);
+                    frequency[num]--;
+                }
+            }
+
+            return result.ToArray();
+        }
+
+        #endregion
+
         static void Main(string[] args)
         {
 
@@ -268,6 +298,15 @@ namespace Assignment
             //int target = int.Parse(Console.ReadLine()!);
 
             //SearchInStack(stack, target);
+
+            #endregion
+
+            #region Q09 - Given two arrays, find their intersection. Each element in the result should appear as many times as it shows in both arrays.
+
+            //int[] arr01 = { 1, 2, 3, 4, 4 };
+            //int[] arr02 = { 1, 4, 4 ,3};
+            //int[] result = Intersection(arr01, arr02);
+            //Console.WriteLine(string.Join(", ", result));
 
             #endregion
 
