@@ -16,7 +16,12 @@ namespace Demo
                     sum += (int?)numbers[i] ?? 0;// Unsafe Casting [ May throw exception if the value of numbers[i] is of type not int ]
             }
             return sum;
-        } 
+        }
+
+        #endregion
+
+        #region Part 04 Generic Collections - List
+
         public static int SumList(List<int> numbers)
         {
             int sum = 0;
@@ -171,7 +176,6 @@ namespace Demo
             //Console.WriteLine(SumList(numbers));// 10
 
             #endregion
-
 
             #endregion
 
