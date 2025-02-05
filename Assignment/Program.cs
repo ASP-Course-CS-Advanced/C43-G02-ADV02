@@ -218,6 +218,28 @@ namespace Assignment
 
         #endregion
 
+        #region Q11 - 
+
+        static Queue<int> ReverseFirstK(Queue<int> q, int k)
+        {
+            Stack<int> stack = new Stack<int>();
+            for (int i = 0; i < k; i++)
+            {
+                stack.Push(q.Dequeue());
+            }
+            while (stack.Count > 0)
+            {
+                q.Enqueue(stack.Pop());
+            }
+            for (int i = 0; i < q.Count - k; i++)
+            {
+                q.Enqueue(q.Dequeue());
+            }
+            return q;
+        }
+
+        #endregion
+
         static void Main(string[] args)
         {
 
@@ -346,9 +368,28 @@ namespace Assignment
 
             #region Q10 - Given an ArrayList of integers and a target sum, find if there is a contiguous sub list that sums up to the target.
 
-            int[] arr = { 1, 2, 3, 7, 5 };
-            int target = 12;
-            FindSublist(arr, target);
+            //int[] arr = { 1, 2, 3, 7, 5 };
+            //int target = 12;
+            //FindSublist(arr, target);
+
+            #endregion
+
+            #region Q11 - Given a queue reverse first K elements of a queue, keeping the remaining elements in the same order
+
+            //Queue<int> q = new Queue<int>();
+            //q.Enqueue(1);
+            //q.Enqueue(2);
+            //q.Enqueue(3);
+            //q.Enqueue(4);
+            //q.Enqueue(5);
+
+            //int k = 3;
+            //q = ReverseFirstK(q, k);
+
+            //foreach (int item in q)
+            //{
+            //    Console.Write(item + " ");
+            //}
 
             #endregion
 
