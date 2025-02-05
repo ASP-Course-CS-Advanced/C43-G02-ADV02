@@ -197,6 +197,65 @@ namespace Demo
 
             #endregion
 
+            #region Part 07 Generic Collections - Stack
+
+            #region Ex01
+
+            //Stack<int> stack = new Stack<int>();
+
+            //stack.Push(1);
+            //stack.Push(2);
+            //stack.Push(3);
+            //stack.Push(4);
+            //stack.Push(5);
+
+            //Console.WriteLine(stack.Pop());// 5
+
+            //foreach (var item in stack)
+            //{
+            //    Console.Write(item + " ");// 4 3 2 1
+            //} 
+
+            #endregion
+
+            #region Ex02
+
+            //Stack<int> stack = new Stack<int>();
+
+            //stack.Push(1);
+            //stack.Push(2);
+            //stack.Push(3);
+
+            //Console.WriteLine(stack.TryPop(out int value01));// True
+            //Console.WriteLine(value01);// 3
+
+            //Console.WriteLine(stack.TryPop(out int value02));// True
+            //Console.WriteLine(value02);// 2
+
+            //Console.WriteLine(stack.TryPop(out int value03));// True
+            //Console.WriteLine(value03);// 1
+
+            //Console.WriteLine(stack.TryPop(out int value04));// False [stack is empty so pop fail]
+            //Console.WriteLine(value04);// 0 [default value of int [valueType]]
+
+            #endregion
+
+            #region Ex03
+
+            //Stack<int> stack = new Stack<int>();
+
+            //Console.WriteLine(stack.TryPeek(out int value01));// False
+            //Console.WriteLine(value01);// 0
+
+            //stack.Push(5);
+
+            //Console.WriteLine(stack.TryPeek(out int value02));// True
+            //Console.WriteLine(value02);// 5
+
+            #endregion
+
+            #endregion
+
         }
     }
 }
