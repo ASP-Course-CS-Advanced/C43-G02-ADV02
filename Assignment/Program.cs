@@ -218,7 +218,8 @@ namespace Assignment
 
         #endregion
 
-        #region Q11 - 
+        #region Q11 - Given a queue reverse first K elements of a queue, keeping the remaining elements in the same order
+
 
         static Queue<int> ReverseFirstK(Queue<int> q, int k)
         {
