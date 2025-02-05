@@ -179,6 +179,24 @@ namespace Demo
 
             #endregion
 
+            #region Part 06 Generic Collections - LinkedList
+
+            //LinkedList<int> numbers = new LinkedList<int>();
+
+            //LinkedListNode<int> node1 = numbers.AddFirst(1);
+            //LinkedListNode<int> node4 = numbers.AddLast(4);
+            //LinkedListNode<int> node2 = numbers.AddAfter(node1,2);
+            //LinkedListNode<int> node3 = numbers.AddBefore(node4,3);
+
+            //Console.WriteLine(node1.Next.Value);// 2
+
+            //foreach (int item in numbers)
+            //{
+            //    Console.Write(item+ " ");// 1 2 3 4
+            //}
+
+            #endregion
+
         }
     }
 }
