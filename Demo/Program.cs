@@ -197,7 +197,7 @@ namespace Demo
 
             #endregion
 
-            #region Part 07 Generic Collections - Stack
+            #region Part 07 Generic Collections - Stack [LIFO]
 
             #region Ex01
 
@@ -214,7 +214,7 @@ namespace Demo
             //foreach (var item in stack)
             //{
             //    Console.Write(item + " ");// 4 3 2 1
-            //} 
+            //}
 
             #endregion
 
@@ -250,6 +250,65 @@ namespace Demo
             //stack.Push(5);
 
             //Console.WriteLine(stack.TryPeek(out int value02));// True
+            //Console.WriteLine(value02);// 5
+
+            #endregion
+
+            #endregion
+
+            #region Part 08 Generic Collections - Queue [FIFo].
+
+            #region Ex01
+
+            //Queue<int> queue = new Queue<int>();
+
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+            //queue.Enqueue(4);
+            //queue.Enqueue(5);
+
+            //Console.WriteLine(queue.Dequeue());// 1
+
+            //foreach (var item in queue)
+            //{
+            //    Console.Write(item + " ");// 2 3 4 5
+            //}
+
+            #endregion
+
+            #region Ex02
+
+            //Queue<int> queue = new Queue<int>();
+
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+
+            //Console.WriteLine(queue.TryDequeue(out int value01));// True
+            //Console.WriteLine(value01);// 1
+
+            //Console.WriteLine(queue.TryDequeue(out int value02));// True
+            //Console.WriteLine(value02);// 2
+
+            //Console.WriteLine(queue.TryDequeue(out int value03));// True
+            //Console.WriteLine(value03);// 3
+
+            //Console.WriteLine(queue.TryDequeue(out int value04));// False [queue is empty so Dequeue fail]
+            //Console.WriteLine(value04);// 0 [default value of int [valueType]]
+
+            #endregion
+
+            #region Ex03
+
+            //Queue<int> queue = new Queue<int>();
+
+            //Console.WriteLine(queue.TryPeek(out int value01));// False
+            //Console.WriteLine(value01);// 0
+
+            //queue.Enqueue(5);
+
+            //Console.WriteLine(queue.TryPeek(out int value02));// True
             //Console.WriteLine(value02);// 5
 
             #endregion
