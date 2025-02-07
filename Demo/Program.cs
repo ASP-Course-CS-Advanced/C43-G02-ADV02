@@ -179,6 +179,442 @@ namespace Demo
 
             #endregion
 
+            #region Part 05 Generic Collections - List (Methods)
+
+            #region 01 - Add(T item).
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+            //numbers.Add(6);
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item+" ");// 1 2 3 4 5 6
+            //}
+
+            #endregion
+
+            #region 02 - Insert(T index, T item)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+            //numbers.Insert(0,100);
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item + " ");// 100 1 2 3 4 5 6
+            //}
+
+            #endregion
+
+            #region 03 - AddRange(IEnumerable<T> collection)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+            //numbers.AddRange(new int[] {6,7,8,9,10});
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item + " ");// 1 2 3 4 5 6 7 8 9 10
+            //}
+
+            #endregion
+
+            #region 04 - InsertRange()
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+            //numbers.InsertRange(2,new int[] { 6, 7, 8, 9, 10 });
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item + " ");// 1 2 6 7 8 9 10 3 4 5
+            //}
+
+            #endregion
+
+            #region 05 - AsReadOnly()
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //IReadOnlyList<int> ReadOnlyNums = numbers.AsReadOnly();
+            ////ReadOnlyNums.Add(1);//Invalid, ReadOnly Access.
+            ////ReadOnlyNums[0] = 100;//Invalid, ReadOnly Access.
+
+            //foreach (var item in ReadOnlyNums)
+            //{
+            //    Console.Write(item + " ");// 1 2 3 4 5
+            //}
+            //Console.WriteLine();
+
+            //numbers.AddRange(new int[] { 6, 7, 8, 9 });
+
+            //foreach (var item in ReadOnlyNums)
+            //{
+            //    Console.Write(item + " ");// 1 2 3 4 5 6 7 8 9
+            //}
+
+            #endregion
+
+            #region 06 - BinarySearch
+
+            #region 06.1 - BinarySearc(T item)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //Console.WriteLine(numbers.BinarySearch(5));// 4
+            //Console.WriteLine(numbers.BinarySearch(10));// -6
+
+
+            //List<Employee> employees = new List<Employee>()
+            //{
+            //    new Employee(){Id = 10, Name = "Eslam", Salary = 8000},
+            //    new Employee(){Id = 50, Name = "Eslam", Salary = 20_000},
+            //    new Employee(){Id = 20, Name = "Ahmed", Salary = 9000}
+            //};
+
+            //employees.Sort();
+
+            //Console.WriteLine(employees.BinarySearch(new Employee() { Id = 20, Name = "Ahmed", Salary = 9000 }));// 1 -> index after sorting
+
+            #endregion
+
+            #region 06.2 - BinarySearch(T item, IComparer<T>? comparer)
+
+            //List<Employee> employees = new List<Employee>()
+            //{
+            //    new Employee(){Id = 10, Name = "Eslam", Salary = 8000},
+            //    new Employee(){Id = 50, Name = "Khalid", Salary = 20_000},
+            //    new Employee(){Id = 20, Name = "Ahmed", Salary = 9000}
+            //};
+
+            //employees.Sort(new EmployeeComparerId());
+
+            //Console.WriteLine(employees.BinarySearch(new Employee() { Id = 50 }, new EmployeeComparerId()));// 2 -> After Sorting based on id.
+
+
+            #endregion
+
+            #region 06.3 - BinarySearc(int index,int count,T item, IComparer<T>? comparer)
+
+            //List<Employee> employees = new List<Employee>()
+            //{
+            //    new Employee(){Id = 10, Name = "Eslam", Salary = 8000},
+            //    new Employee(){Id = 50, Name = "Khalid", Salary = 20_000},
+            //    new Employee(){Id = 20, Name = "Ahmed", Salary = 9000},
+            //    new Employee(){Id = 30, Name = "Salam", Salary = 1000}
+            //};
+
+            //employees.Sort(new EmployeeComparerId());
+
+            //Console.WriteLine(employees.BinarySearch(1,3,new Employee() { Id = 10}, new EmployeeComparerId()));// -2 -> Not found this element in the specified range.
+
+            #endregion
+
+            #endregion
+
+            #region 07 - Clear()
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //Console.WriteLine($"Count: {numbers.Count}, Capacity: {numbers.Capacity}");// Count: 5, Capacity: 5
+
+            //numbers.Clear();
+
+            //Console.WriteLine($"Count: {numbers.Count}, Capacity: {numbers.Capacity}");// Count: 0, Capacity: 5
+
+            #endregion
+
+            #region 08 - Contains()
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //Console.WriteLine(numbers.Contains(3));// True
+
+            #endregion
+
+            #region 09 - ConvertAll<Toutput>(Convert)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //List<long>longNumbers = numbers.ConvertAll<long>(delegate (int n) { n += 1000; return n; });
+
+            //foreach (var item in longNumbers)
+            //{
+            //    Console.Write(item+" ");// 1001 1002 1003 1004 1005
+            //}
+
+            #endregion
+
+            #region 10 - CopyTo()
+
+            #region 10.1 - CopyTo(T[] array)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+            //int[] arr = new int[5];// must be with size >= count of the source collection.
+            //numbers.CopyTo(arr);
+
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item+" ");// 1 2 3 4 5
+            //}
+
+            #endregion
+
+            #region 10.2 - CopyTo(T[] array, int arrayIndex)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+            //int[] arr = new int[10];// must be with size >= count of the source collection.
+            //numbers.CopyTo(arr,5);// start copy with index (5) in the destination array
+
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");// 0 0 0 0 0 1 2 3 4 5
+            //}
+
+            #endregion
+
+            #region 10.3 CopyTo(int index, T[] arr, int arrayIndex, int count)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+            //int[] arr = new int[10];
+            //numbers.CopyTo(2, arr, 5, 3);
+
+            //foreach (var item in arr)
+            //{
+            //    Console.Write(item + " ");// 0 0 0 0 0 3 4 5 0 0
+            //}
+
+            #endregion
+
+
+            #endregion
+
+            #region 11 - Find(predicate<T> match)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //int firstEvenNumber = numbers.Find(N => N % 2 == 0);
+
+            //Console.WriteLine(firstEvenNumber);// 2
+
+            #endregion
+
+            #region 12 - FindLast(predicate<T> match)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //int lastEvenNumber = numbers.FindLast(N => N % 2 == 0);
+
+            //Console.WriteLine(lastEvenNumber);// 4
+
+            #endregion
+
+            #region 13 - FindIndex(predicate<T> match)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //int firstEvenNumber = numbers.Find(N => N % 2 == 0);
+            //int firstEvenNumberIndex = numbers.FindIndex(N => N % 2 == 0);
+
+            //Console.WriteLine($"First Even Number => {firstEvenNumber}, at index => {firstEvenNumberIndex}");// First Even Number => 2, at index => 1
+
+            #endregion
+
+            #region 14 - FindLastIndex(predicate<T> match)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //int lastEvenNumber = numbers.FindLast(N => N % 2 == 0);
+            //int lastEvenNumberIndex = numbers.FindLastIndex(N => N % 2 == 0);
+
+            //Console.WriteLine($"Last Even Number => {lastEvenNumber}, at index => {lastEvenNumberIndex}");// Last Even Number => 4, at index => 3
+
+            #endregion
+
+            #region 15 - FindAll(predicate<T> match)
+
+            //List<int> numbers = new List<int>(10) { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            //List<int> EvenNumbers = numbers.FindAll(N => N % 2 == 0);
+
+            //foreach (var item in EvenNumbers)
+            //{
+            //    Console.Write(item + " ");// 2 4 6 8 10
+            //}
+
+            #endregion
+
+            #region 16 - Exists(predicate<T> match)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //Console.WriteLine(numbers.Exists(N => N % 2 == 0));// True
+
+            #endregion
+
+            #region 17 - TrueForAll(predicate<T> match)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //Console.WriteLine(numbers.TrueForAll(N => N % 2 == 0));// False
+
+            #endregion
+
+            #region 18 - ForEach(Action<T> action)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //numbers.ForEach(N =>
+            //{
+            //    N += 100;
+            //    Console.Write(N+" ");// 101 102 103 104 105
+            //});
+
+            //Console.WriteLine();
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item+" ");// 1 2 3 4 5
+            //}
+
+            #endregion
+
+            #region 19 - GetRange(int index, int count)
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //List<int> subRangeNumbers = numbers.GetRange(0, 3);
+
+            //foreach (var item in subRangeNumbers)
+            //{
+            //    Console.Write(item+" ");// 1 2 3
+            //}
+
+            #endregion
+
+            #region 20 - IndexOf()
+
+            #region 20.1 - IndexOf(T item)
+
+            //List<int> number = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //Console.WriteLine(number.IndexOf(4));// 3 -> index of the first occurence of (4)
+
+            #endregion
+
+            #region 20.2 - IndexOf(T item,int index)
+
+            //List<int> number = new List<int>(5) { 5, 2, 3, 4, 4 };
+
+            //Console.WriteLine(number.IndexOf(5,1));// -1 -> not found "5" in the range of elemnts from index 1
+
+            #endregion
+
+            #region 20.3 - IndexOf(T item,int index,int count)
+
+            //List<int> number = new List<int>(8) { 5, 2, 3, 5, 4, 8, 9, 5 };
+
+            //Console.WriteLine(number.IndexOf(5, 1, 4));// 3
+
+            #endregion
+
+
+            #endregion
+
+            #region 21 - LastIndexOf()
+
+            #region 20.1 - IndexOf(T item)
+
+            //List<int> number = new List<int>(5) { 5, 1, 2, 3, 4, 5 };
+
+            //Console.WriteLine(number.LastIndexOf(5));// 5
+
+            #endregion
+
+            #region 20.2 - IndexOf(T item,int index)
+
+            //List<int> number = new List<int>(5) { 5, 2, 3, 4, 4 };
+
+            //Console.WriteLine(number.LastIndexOf(5, 2));// 0
+
+            #endregion
+
+            #region 20.3 - IndexOf(T item,int index,int count)
+
+            //List<int> number = new List<int>(8) { 5, 2, 3, 5, 4, 8, 9, 5 };
+
+            //Console.WriteLine(number.LastIndexOf(2, 4, 4));// 1
+
+            #endregion
+
+            #endregion
+
+            #region 22 - Remove(T item)
+
+            //List<int> numbers = new List<int>() { 1, 2, 3, 4, 5 };
+
+            //Console.WriteLine(numbers.Remove(2));// True
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item+" ");// 1 3 4 5
+            //}
+
+            #endregion
+
+            #region 23 - RemoveAt(int index)
+
+            //List<int> numbers = new List<int>() { 1, 2, 3, 4, 5 };
+
+            //numbers.RemoveAt(4);
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item + " ");// 1 2 3 4
+            //}
+
+            #endregion
+
+            #region 24 - RemoveRange(int index,int count)
+
+            //List<int> numbers = new List<int>() { 1, 2, 3, 4, 5 };
+
+            //numbers.RemoveRange(1,3);
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item + " ");// 1 5
+            //}
+
+            #endregion
+
+            #region 25 - RemoveRange(int index,int count)
+
+            //List<int> numbers = new List<int>() { 1, 2, 3, 4, 5 };
+
+            //int numberOfRemovedElements = numbers.RemoveAll(N => N % 2 == 0);
+
+            //Console.WriteLine(numberOfRemovedElements);// 2
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item + " ");// 1 3 5
+            //}
+
+            #endregion
+
+            #region 26 - Reverse()
+
+            //List<int> numbers = new List<int>(5) { 1, 2, 3, 4, 5 };
+
+            //numbers.Reverse();
+
+            //foreach (var item in numbers)
+            //{
+            //    Console.Write(item+" ");// 5 4 3 2 1
+            //}
+
+            #endregion
+
+            #endregion
+
             #region Part 06 Generic Collections - LinkedList
 
             //LinkedList<int> numbers = new LinkedList<int>();
@@ -314,6 +750,8 @@ namespace Demo
             #endregion
 
             #endregion
+
+
 
         }
     }
